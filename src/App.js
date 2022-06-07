@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Localtime, News, Weather, Transit } from './components/index';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className="Header-logo" alt="logo" />
+        <h1 className="Header-title"> ITHS Dashboard </h1>
+        <Localtime className="Header-time" />
       </header>
+      <main>
+        <div className="App-main">
+          <News className="News"/>
+          <Weather className="Weather"/>
+          <Transit className="Transit"/>
+        </div>
+      </main>
     </div>
   );
 }
