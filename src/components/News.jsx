@@ -1,22 +1,21 @@
 import { useEffect, useState } from 'react';
 import '../App.css';
 
+
 function News() {
+    const token = "AAAAAAAAAAAAAAAAAAAAALjMdQEAAAAA4W09iav1RxWbqapsKhbL0Al6rrU%3DWur6GkBuFKtGFmpjDX0mn90uxTN4yzKPOfDRgz4D4ewPRogYpl";
+    const URL = "https://api.twitter.com/2/tweets/search/recent?query=%23iths2022"
     const [Tweets, setTweets] = useState('Loading...');
 
-
     useEffect(() => {
-        fetch('https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=SJKxyz&count=1')
-            .then(response => response.json())
-            .then(json => setTweets(json))
-            .catch(error => console.log(error));
+        setInterval(fetchTweets, 10000);
     }, []);
 
     return (
         <div className="Widget News">
-                <p>
-                    {Tweets[0].text}
-                </p>
+            <p>
+                {Tweets}
+            </p>
         </div>
     )
 }
