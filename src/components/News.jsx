@@ -7,10 +7,6 @@ function News() {
     const URL = "https://api.twitter.com/2/tweets/search/recent?query=%23iths2022"
     const [Tweets, setTweets] = useState('Loading...');
 
-    useEffect(() => {
-        setInterval(fetchTweets, 10000);
-    }, []);
-
     return (
         <div className="Widget News">
             <p>
