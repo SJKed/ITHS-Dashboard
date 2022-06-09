@@ -1,5 +1,5 @@
 import './App.css';
-import { Localtime, News, Weather, Transit } from './components/index';
+import { Localtime, News, Weather, Transit, Timeline } from './components/index';
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
       <main>
         <div className="App-main">
           <News className="News"/>
+          <Timeline className="Timeline"/>
           <Weather className="Weather"/>
           <Transit className="Transit"/>
         </div>
