@@ -42,6 +42,17 @@
 @media screen and (max-width: 480px) {
     .Tweet {
         max-height: 100%;
-        padding: 0;
+        padding: 1rem;
+    }
+    .TweetPfp {
+        width: 40px;
+        height: 40px;
+    }
+    .TweetHandle {
+        font-size: 1rem;
+    }
+    .TweetContent {
+        margin-top: -30px;
+        max-height: 100%;
     }
 }
