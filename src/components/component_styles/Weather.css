@@ -1,0 +1,28 @@
+#city {
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    border-bottom: 3px solid #6a2449;
+    padding: 0.5rem;
+    margin-top: 0;
+    background: #6a2449;
+}
+
+#temp {
+    font-size: 2rem;
+}
+
+#feelsLike {
+    margin-top: -30px;
+    font-size: 1.2rem;
+    opacity: 0.5;
+}
+
+#weatherImg {
+    width: 100px;
+    height: 100px;
+}
+
+#windspeed {
+    font-size: 1.2rem;
+}

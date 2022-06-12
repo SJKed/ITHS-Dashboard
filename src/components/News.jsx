@@ -32,7 +32,7 @@ function News() {
                         <div className="TweetHandle">
                             <img src={pfp} className="TweetPfp" alt="twitter_egg" />
                             <h3>{tweet.name}</h3>
-                            <h3>@{tweet.username}</h3>
+                            {/* <h3>@{tweet.username}</h3> */}
                         </div>
                         <div className="TweetContent">
                             <p>{tweet.text}</p>
