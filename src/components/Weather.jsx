@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import sun from '../assets/weather_icons/sun.png';
-import cloud from '../assets/weather_icons/cloud.png';
-import rain from '../assets/weather_icons/rain.png';
-import haze from '../assets/weather_icons/haze.png';
-import partly_cloudy from '../assets/weather_icons/partly_cloudy.png';
-import snow from '../assets/weather_icons/snow.png';
-import wind from '../assets/weather_icons/wind.png';
-import fog from '../assets/weather_icons/fog.png';
-import storm from '../assets/weather_icons/storm.png';
+// import cloud from '../assets/weather_icons/cloud.png';
+// import rain from '../assets/weather_icons/rain.png';
+// import haze from '../assets/weather_icons/haze.png';
+// import partly_cloudy from '../assets/weather_icons/partly_cloudy.png';
+// import snow from '../assets/weather_icons/snow.png';
+// import wind from '../assets/weather_icons/wind.png';
+// import fog from '../assets/weather_icons/fog.png';
+// import storm from '../assets/weather_icons/storm.png';
 import '../App.css';
 import './component_styles/Weather.css';
 
