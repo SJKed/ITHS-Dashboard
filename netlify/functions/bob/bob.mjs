@@ -6,7 +6,10 @@ const URL = "https://api.twitter.com/2/tweets/search/recent?query=%23iths2022&ex
 exports.handler = async (event, context) => {
   try {
     const response = await fetch(URL, {
-      headers: { "Authorization": `Bearer ${token}` }
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "Access-Control-Allow-Origin": "*"
+      }
     });
     const data = await response.json();
 
