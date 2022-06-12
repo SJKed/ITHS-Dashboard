@@ -9,7 +9,7 @@ function News() {
     const [Tweets, setTweets] = useState([{name: "Loading...", username: "Loading...", text: "Loading..."}]);
 
     async function fetchNetlify() {
-        fetch('http://localhost:8888/.netlify/functions/bob')
+        fetch('https://charming-pegasus-c43878.netlify.app/.netlify/functions/bob')
             .then(response => response.json())
             .then(data => {
                 setTweets(data);
