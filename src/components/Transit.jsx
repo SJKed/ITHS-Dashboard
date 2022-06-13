@@ -5,7 +5,7 @@ function Transit() {
 
     async function fetchSL() {
         fetch('https://charming-pegasus-c43878.netlify.app/.netlify/functions/fetchsl')
-            .then(response => response.json())
+            .then(response => response.text())
             .then(data => {
                 console.log(data)
             })
