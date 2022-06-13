@@ -12,10 +12,13 @@ exports.handler = async function (event, context) {
     });
     const data = await response.json();
     console.log(data)
+    const trip = data.trip
+
+    //map response so that it only includes Origin.name and origin.time, and Destination.name and destination.time
 
     return {
       statusCode: 200,
-      body: JSON.stringify(data.Trip)
+      body: JSON.stringify(trip)
     };
   } catch (err) {
     return {

@@ -18,7 +18,6 @@ function News() {
             .catch(error => console.log(error));
     }
 
-    //useEffect setInterval
     useEffect(() => {
         setInterval(() => {
             fetchNetlify();
