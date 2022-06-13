@@ -19,7 +19,7 @@ function Transit() {
     useEffect(() => {
         setInterval(() => {
             fetchSL();
-        }, 60000);
+        }, 10000);
     }, []);
 
     return (
