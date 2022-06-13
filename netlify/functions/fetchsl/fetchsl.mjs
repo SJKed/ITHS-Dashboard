@@ -4,7 +4,7 @@ const token = "875bc083-478d-4124-8d6b-fff7a15ab122"
 
 exports.handler = async function (event, context) {
   try {
-    const response = await fetch(`https://api.resrobot.se/v2.1/departureBoard?id=740004046&format=json&accessId=${token}`, {
+    const response = await fetch(`https://api.resrobot.se/v2.1/trip?format=json&originId=740004046&destId=740000001&date&accessId=${token}`, {
       method: "GET",
       headers: {
         "Access-Control-Allow-Origin": "*"
@@ -15,7 +15,7 @@ exports.handler = async function (event, context) {
 
     return {
       statusCode: 200,
-      body: JSON.stringify(data.Departure)
+      body: JSON.stringify(data.Trip)
     };
   } catch (err) {
     return {
