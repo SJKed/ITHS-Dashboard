@@ -12,7 +12,6 @@ exports.handler = async (event, context) => {
       }
     });
     const data = await response.json();
-    console.log(data);
 
     const tweets = data.data.map(tweet => {
       const user = data.includes.users.find(user => user.id === tweet.author_id);
