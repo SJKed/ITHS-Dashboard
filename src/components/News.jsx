@@ -8,7 +8,7 @@ function News() {
 
     const [Tweets, setTweets] = useState([{name: "Loading...", username: "Loading...", text: "Loading..."}]);
 
-    async function fetchNetlify() {
+    async function fetchTweets() {
         fetch('https://charming-pegasus-c43878.netlify.app/.netlify/functions/bob')
             .then(response => response.json())
             .then(data => {
@@ -19,9 +19,7 @@ function News() {
     }
 
     useEffect(() => {
-        setInterval(() => {
-            fetchNetlify();
-        }, 10000);
+        setInterval(fetchTweets(), 60000);
     }, []);
 
     return (
@@ -32,7 +30,7 @@ function News() {
                         <div className="TweetHandle">
                             <img src={pfp} className="TweetPfp" alt="twitter_egg" />
                             <h3>{tweet.name}</h3>
-                            {/* <h3>@{tweet.username}</h3> */}
+                            <h3>@{tweet.username}</h3>
                         </div>
                         <div className="TweetContent">
                             <p>{tweet.text}</p>

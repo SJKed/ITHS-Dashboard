@@ -11,9 +11,15 @@ exports.handler = async function (event, context) {
       }
     });
     const data = await response.json();
+    const trip = data.Trip
+    //The third available trip is the one we want, as it's almost exactly 10 minutes until departure.
+    const origin = trip[3].Origin.name
+    const destination = trip[3].Destination.name
+    const departure = trip[3].Origin.time
+    const arrival = trip[3].Destination.time
     return {
       statusCode: 200,
-      body: JSON.stringify(data)
+      body: JSON.stringify({ origin, departure, destination, arrival })
     };
   } catch (err) {
     return {

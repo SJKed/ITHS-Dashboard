@@ -3,31 +3,29 @@ import '../App.css';
 
 function Transit() {
 
-    const [transit] = useState([{ Origin: "Liljeholmen", Destination: "Stockholm City", Departure: "Loading...", Arrival: "Loading..." }]);
+    const [transit, setTransit] = useState([{ origin: "Liljeholmen", destination: "Stockholm City", departure: "Loading...", arrival: "Loading..." }]);
 
     async function fetchSL() {
         fetch('https://charming-pegasus-c43878.netlify.app/.netlify/functions/fetchsl')
             .then(response => response.json())
             .then(data => {
+                setTransit(data);
                 console.log(data)
-                // setTransit(data);
             })
             .catch(error => console.log(error));
     }
 
     useEffect(() => {
-        setInterval(() => {
-            fetchSL();
-        }, 10000);
+        setInterval(fetchSL(), 60000);
     }, []);
 
     return (
         <div className="Widget Transit">
             <p> The next train from Liljeholmen to Centralen: </p>
-            <p>{transit && transit.Origin}</p>
-            <p>{transit && transit.Departure}</p>
-            <p>{transit && transit.Destination}</p>
-            <p>{transit && transit.Arrival}</p>
+            <p id="Origin">{transit.origin}</p>
+            <p id="Departure">{transit.departure}</p>
+            <p id="Destination">{transit.destination}</p>
+            <p id="Arrival">{transit.arrival}</p>
         </div>
     )
 }
