@@ -3,7 +3,7 @@ import '../App.css';
 
 function Transit() {
 
-    const [transit, setTransit] = useState([{ Origin: "Liljeholmen", Destination: "Stockholm City", Departure: "Loading...", Arrival: "Loading..." }]);
+    const [transit] = useState([{ Origin: "Liljeholmen", Destination: "Stockholm City", Departure: "Loading...", Arrival: "Loading..." }]);
 
     async function fetchSL() {
         // fetch('https://charming-pegasus-c43878.netlify.app/.netlify/functions/fetchsl')
