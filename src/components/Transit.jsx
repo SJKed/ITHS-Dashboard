@@ -11,7 +11,7 @@ function Transit() {
             .then(response => response.json())
             .then(data => {
                 console.log(data)
-                setTransit(data);
+                // setTransit(data);
             })
             .catch(error => console.log(error));
     }
