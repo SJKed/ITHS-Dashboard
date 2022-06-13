@@ -17,6 +17,7 @@ function Transit() {
             fetchSL();
         }, 10000);
     }, []);
+
     return (
         <div className="Widget Transit">
             <p>
