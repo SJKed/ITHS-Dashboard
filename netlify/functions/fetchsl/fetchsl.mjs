@@ -10,7 +10,7 @@ const handler = async function (event, context) {
         "Access-Control-Allow-Origin": "*"
       }
     })
-      .then(res => res.json())
+      .then(res => res.text())
       .then(data => {
         console.log(data)
       })
