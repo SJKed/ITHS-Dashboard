@@ -69,4 +69,19 @@ self.addEventListener('message', (event) => {
   }
 });
 
+self.addEventListener('fetch', (event) => {
+  if (event.request.url.includes('/api.')) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          console.log(response)
+          return response;
+        })
+        .catch((error) => {
+          return error;
+        })
+    );
+  }
+});
+
 // Any other custom service worker logic can go here.
