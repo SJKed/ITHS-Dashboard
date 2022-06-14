@@ -1,49 +1,15 @@
 /* eslint-disable no-restricted-globals */
-import { clientsClaim } from 'workbox-core';
-import { ExpirationPlugin } from 'workbox-expiration';
-import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
-import { registerRoute } from 'workbox-routing';
-import { StaleWhileRevalidate } from 'workbox-strategies';
 
-clientsClaim();
+const statics = self.__WB_MANIFEST;
 
-precacheAndRoute(self.__WB_MANIFEST);
-
-const fileExtensionRegexp = new RegExp('/[^/?]+\\.[^/]+$');
-registerRoute(
-  ({ request, url }) => {
-    if (request.mode !== 'navigate') {
-      return false;
-    } 
-
-    if (url.pathname.startsWith('/_')) {
-      return false;
-    } 
-
-    if (url.pathname.match(fileExtensionRegexp)) {
-      return false;
-    } 
-
-    return true;
-  },
-  createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html')
-);
-
-registerRoute(
-
-  ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.png'), 
-  new StaleWhileRevalidate({
-    cacheName: 'images',
-    plugins: [
-      new ExpirationPlugin({ maxEntries: 50 }),
-    ],
-  })
-);
-
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
+self.addEventListener("install", (event) => {
+  self.skipWaiting();
+  event.waitUntil(
+    caches.open("sötsursås").then((cache) => {
+      console.log(statics);
+      return cache.addAll(statics.map((url) => url.url));
+    })
+  );
 });
 
 
@@ -56,11 +22,11 @@ self.addEventListener("fetch", (event) => {
         if (response) {
           return response;
         } else {
-          const sötsursås = fetch(event.request);
-          sötsursås.then((response) => {
+          const pellesvanslös = fetch(event.request);
+          pellesvanslös.then((response) => {
             cache.put(event.request, response.clone());
           });
-          return sötsursås;
+          return pellesvanslös;
         }
       });
     })
