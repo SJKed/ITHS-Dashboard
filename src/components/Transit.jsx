@@ -8,7 +8,12 @@ function Transit() {
     const [transit, setTransit] = useState([{ origin: "Liljeholmen", destination: "Stockholm City", departure: "Loading...", arrival: "Loading..." }]);
 
     async function fetchSL() {
-        fetch('https://charming-pegasus-c43878.netlify.app/.netlify/functions/fetchsl')
+        fetch('https://charming-pegasus-c43878.netlify.app/.netlify/functions/fetchsl', {
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            }
+        })
             .then(response => response.json())
             .then(data => {
                 setTransit(data);

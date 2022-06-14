@@ -9,7 +9,12 @@ function News() {
     const [Tweets, setTweets] = useState([{name: "Loading...", username: "Loading...", text: "Loading..."}]);
 
     async function fetchTweets() {
-        fetch('https://charming-pegasus-c43878.netlify.app/.netlify/functions/bob')
+        fetch('https://charming-pegasus-c43878.netlify.app/.netlify/functions/bob', {
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            }
+        })
             .then(response => response.json())
             .then(data => {
                 setTweets(data);
