@@ -75,7 +75,8 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       fetch(event.request)
         .then((response) => {
-          console.log('response: ' + response)
+          console.log('response')
+          console.log(response)
           return response;
         })
         .catch((error) => {
