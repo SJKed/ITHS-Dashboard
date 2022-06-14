@@ -70,11 +70,12 @@ self.addEventListener('message', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  console.log('fetch event', event);
   if (event.request.url.includes('/api.')) {
     event.respondWith(
       fetch(event.request)
         .then((response) => {
-          console.log(response)
+          console.log('response: ' + response)
           return response;
         })
         .catch((error) => {
