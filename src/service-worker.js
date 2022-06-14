@@ -16,6 +16,7 @@ self.addEventListener("install", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (!(event.request.url.indexOf('http') === 0)) return;
+    if(navigator.onLine) { return }
 
   event.respondWith(
     caches.open("benis").then((cache) => {
