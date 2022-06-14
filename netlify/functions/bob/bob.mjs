@@ -8,7 +8,6 @@ exports.handler = async (event, context) => {
     const response = await fetch(URL, {
       headers: {
         "Authorization": `Bearer ${token}`,
-        "Access-Control-Allow-Origin": "*"
       }
     });
     const data = await response.json();

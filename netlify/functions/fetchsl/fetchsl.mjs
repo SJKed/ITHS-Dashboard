@@ -4,12 +4,7 @@ const token = "875bc083-478d-4124-8d6b-fff7a15ab122"
 
 exports.handler = async function (event, context) {
   try {
-    const response = await fetch(`https://api.resrobot.se/v2.1/trip?format=json&originId=740004046&destId=740000001&date&accessId=${token}`, {
-      method: "GET",
-      headers: {
-        "Access-Control-Allow-Origin": "*"
-      }
-    });
+    const response = await fetch(`https://api.resrobot.se/v2.1/trip?format=json&originId=740004046&destId=740000001&date&accessId=${token}`);
     const data = await response.json();
     const trip = data.Trip
     //The third available trip is the one we want, as it's almost exactly 10 minutes until departure.

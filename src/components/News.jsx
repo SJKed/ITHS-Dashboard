@@ -6,15 +6,10 @@ import pfp from "../assets/twitter_egg_blue.jpg";
 
 function News() {
 
-    const [Tweets, setTweets] = useState([{name: "Loading...", username: "Loading...", text: "Loading..."}]);
+    const [Tweets, setTweets] = useState([{ name: "Loading...", username: "Loading...", text: "Loading..." }]);
 
     async function fetchTweets() {
-        fetch('https://charming-pegasus-c43878.netlify.app/.netlify/functions/bob', {
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            }
-        })
+        fetch('https://charming-pegasus-c43878.netlify.app/.netlify/functions/bob')
             .then(response => response.json())
             .then(data => {
                 setTweets(data);
