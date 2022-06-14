@@ -7,6 +7,7 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open("benis").then((cache) => {
       console.log(statics);
+      cache.add("/");
       return cache.addAll(statics.map((url) => url.url));
     })
   );
