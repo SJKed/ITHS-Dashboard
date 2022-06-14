@@ -13,8 +13,10 @@ exports.handler = async function (event, context) {
     const data = await response.json();
     const trip = data.Trip
     //The third available trip is the one we want, as it's almost exactly 10 minutes until departure.
-    const origin = trip[3].Origin.name
-    const destination = trip[3].Destination.name
+    let origin = trip[3].Origin.name
+    origin = origin.split("(")[0] //output: Liljeholmen T-bana
+    let destination = trip[3].Destination.name
+    destination = destination.split(" ")[1] // output: "Centralstation"
     const departure = trip[3].Origin.time
     const arrival = trip[3].Destination.time
     return {

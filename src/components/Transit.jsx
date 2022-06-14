@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import '../App.css';
+import './component_styles/Transit.css'
+import train from '../assets/train.png';
 
 function Transit() {
 
@@ -21,11 +23,16 @@ function Transit() {
 
     return (
         <div className="Widget Transit">
-            <p> The next train from Liljeholmen to Centralen: </p>
-            <p id="Origin">{transit.origin}</p>
-            <p id="Departure">{transit.departure}</p>
-            <p id="Destination">{transit.destination}</p>
-            <p id="Arrival">{transit.arrival}</p>
+            <p id="head"> Next from Liljeholmen to Centralen: </p>
+            <div className="First">
+                <p id="Origin">{transit.origin}</p>
+                <p id="Departure">{transit.departure}</p>
+            </div>
+            <div className="Second">
+                <p id="Destination">{transit.destination}</p>
+                <p id="Arrival">{transit.arrival}</p>
+            </div>
+            <img src={train} id="trainImg" alt="train" />
         </div>
     )
 }

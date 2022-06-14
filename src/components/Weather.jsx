@@ -29,7 +29,7 @@ function Weather() {
     return (
         <div className='Widget Weather'>
             <h2 id="city">{weather && weather.name}</h2>
-            <p id="temp">It's {weather && weather.main.temp} C</p>
+            <p id="temp">{weather && weather.main.temp} C</p>
             <p id="feelsLike">(Feels like {weather && weather.main.feels_like} C)</p>
             <img src={sun} id="weatherImg" alt="sun" />
             <p id="windspeed">Wind whoosing at {weather && weather.wind.speed} m/s</p>

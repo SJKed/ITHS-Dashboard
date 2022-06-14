@@ -26,3 +26,26 @@
 #windspeed {
     font-size: 1.2rem;
 }
+
+@media screen and (max-width: 1600px) {
+    #weatherImg {
+        width: 80px;
+        height: 80px;
+    }
+
+    #windspeed {
+        font-size: 1.2rem;
+    }
+
+    #city {
+        font-size: 1.2rem;
+    }
+
+    #temp {
+        font-size: 1.5rem;
+    }
+
+    #feelsLike {
+        font-size: 1rem;
+    }
+}

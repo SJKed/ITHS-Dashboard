@@ -1,0 +1,40 @@
+.Transit {
+    display: flex;
+    flex-direction: column
+}
+
+#head {
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    color: white;
+    border-bottom: 3px solid #6a2449;
+    margin-top: 0;
+    background: #6a2449;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.First {
+    /* background-color: red; */
+    max-height: 20%;
+    display: flex;
+    font-size: 1rem;
+    justify-content: space-evenly
+    
+}
+
+.Second {
+    /* background-color: blue; */
+    max-height: 20%;
+    display: flex;
+    font-size: 1rem;
+    justify-content: space-evenly
+}   
+
+img {
+    width: 80px;
+    height: 80px;
+    align-self: center;
+    justify-self: center;
+}
