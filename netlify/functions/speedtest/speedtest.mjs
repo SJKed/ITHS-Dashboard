@@ -1,36 +1,37 @@
 import FastSpeedTest from "fast-speedtest-api";
 
 exports.handler = async (event, context) => {
-  let speedtest = new FastSpeedTest({
-    token: "K8TVhjW3gPdaOkD9J3MlD5MtYa1wnOV_mN3iZw",
-    verbose: false,
-    timeout: 10000,
-    https: true,
-    urlCount: 5,
-    bufferSize: 8,
-    unit: FastSpeedTest.UNITS.Mbps
-  });
-
   try {
-    speedtest.getSpeed().then(speed => {
+    let speedtest = new FastSpeedTest({
+      token: "YXNkZmFzZGxmbnNkYWZoYXNkZmhrYWxm", // required
+      verbose: false, // default: false
+      timeout: 10000, // default: 5000
+      https: true, // default: true
+      urlCount: 5, // default: 5
+      bufferSize: 8, // default: 8
+      unit: FastSpeedTest.UNITS.Mbps // default: Bps
+    });
+  
+    speedtest.getSpeed().then(s => {
+      console.log(`Speed: ${s} Mbps`);
       return {
         statusCode: 200,
-        body: JSON.stringify(speed)
-      };
-    }
-    ).catch(err => {
+        body: s
+      }
+    }).catch(e => {
+      console.error(e.message);
       return {
         statusCode: 500,
-        body: JSON.stringify(err)
-      };
-    }
-    );
+        body: JSON.stringify(e.message)
+      }
+    });
   }
-  catch (err) {
+  catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify(err)
-    };
+      body: JSON.stringify(error.message)
+    }
   }
+
 }
 
