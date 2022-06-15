@@ -1,4 +1,5 @@
 import '../App.css';
+import {useEffect} from 'react'
 
 
 function Timeline() {
@@ -13,7 +14,7 @@ function Timeline() {
     }
 
     useEffect(() => {
-        setInterval(fetchTweets(), 60000 * 30);
+        setInterval(fetchSpeed(), 60000 * 30);
     }, []);
     return (
         <div className="Widget Timeline">
