@@ -4,7 +4,7 @@ import {useEffect} from 'react'
 
 function Timeline() {
     async function fetchSpeed() {
-        fetch('http://localhost:9999/.netlify/functions/speedtest')
+        fetch('https://charming-pegasus-c43878.netlify.app/.netlify/functions/speedtest')
             .then(response => response.json())
             .then(data => {
                 console.log(data)
