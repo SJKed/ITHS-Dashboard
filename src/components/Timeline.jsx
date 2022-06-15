@@ -1,12 +1,15 @@
 import '../App.css';
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 function Timeline() {
-    const [speed, setSpeed] = useState('0mbps')
 
     async function fetchSpeed() {
-        fetch('http://localhost:8888/.netlify/functions/speedtest')
-            .then(response => console.log(response))
+        fetch('https://charming-pegasus-c43878.netlify.app/.netlify/functions/speedtest')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            }
+            )
             .catch(error => console.log(error));
     }
 

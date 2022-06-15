@@ -13,7 +13,6 @@ function News() {
             .then(response => response.json())
             .then(data => {
                 setTweets(data);
-                console.log(data)
             })
             .catch(error => console.log(error));
     }

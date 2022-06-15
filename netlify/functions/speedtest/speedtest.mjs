@@ -11,7 +11,7 @@
 //       bufferSize: 8, // default: 8
 //       unit: FastSpeedTest.UNITS.Mbps // default: Bps
 //     });
-  
+
 //     speedtest.getSpeed().then(s => {
 //       console.log(`Speed: ${s} Mbps`);
 //       return {
@@ -35,20 +35,16 @@
 
 // }
 
-const TOKEN = "ESxSA_LhphmCDrJccVm_sKUBY9Go2g";
+import fetch from "node-fetch";
 
-export async function handlers(event, context) {
+exports.handlers = async function (event, context) {
   try {
-    const response = fetch(`https://www.reddit.com/api/v1/r/javascript/top.json?limit=10`, {
-      headers: {
-        "Authorization": `bearer ${TOKEN}`
-      }
-    })
+    const response = fetch(`https://www.reddit.com/r/yugioh/top.json?limit=1`);
     const data = await response.json();
     return {
       statusCode: 200,
       body: JSON.stringify(data)
-    };
+    }
   } catch (err) {
     return {
       statusCode: 500,

@@ -21,7 +21,6 @@ function Weather() {
             .then(response => response.json())
             .then(data => {
                 setWeather(data);
-                console.log(data);
             })
             .catch(error => console.log(error));
     }, [URL])
