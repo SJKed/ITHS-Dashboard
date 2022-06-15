@@ -16,7 +16,7 @@ function Timeline() {
 
     return (
         <div className="Widget Timeline">
-            <p>{speed}</p>
+            <p>Hola hombre</p>
         </div>
     );
 }
