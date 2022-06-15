@@ -7,7 +7,6 @@ function Timeline() {
         fetch('http://localhost:9999/.netlify/functions/speedtest')
             .then(response => response.json())
             .then(data => {
-                setTransit(data);
                 console.log(data)
             })
             .catch(error => console.log(error));
