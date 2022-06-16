@@ -1,5 +1,5 @@
 import '../App.css';
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
 function Timeline() {
 
@@ -17,7 +17,7 @@ function Timeline() {
     }
 
     useEffect(() => {
-        setInterval(fetchPosts(), 60000);
+        setInterval(fetchPosts(), 60000 * 60);
     }, []);
 
     return (
