@@ -5,7 +5,7 @@ function Timeline() {
 
     const [posts, setPosts] = useState([{ title: "Loading...", subreddit: "Loading...", selftext: "Loading..."}]);
 
-    async function fetchSpeed() {
+    async function fetchPosts() {
         fetch('https://charming-pegasus-c43878.netlify.app/.netlify/functions/speedtest')
             .then(response => response.json())
             .then(data => {
@@ -17,7 +17,7 @@ function Timeline() {
     }
 
     useEffect(() => {
-        setInterval(fetchSpeed(), 60000);
+        setInterval(fetchPosts(), 60000);
     }, []);
 
     return (
