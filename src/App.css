@@ -148,6 +148,7 @@ main {
 .Timeline {
   grid-column: 3/5;
   grid-row: 1/5;
+  overflow-y: scroll;
 }
 
 @media screen and (max-width: 2560px) {
